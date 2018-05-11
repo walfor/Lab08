@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.dizionariograph.DizionarioGraphController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.dizionariograph.DizionarioGraphController">
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="83.0">
+               <children>
+                  <Label text="Inserire il numero di lettere: " />
+                  <TextField fx:id="textNmberOfLetter" />
+               </children>
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin></HBox>
+            <HBox spacing="50.0">
+               <children>
+                  <Label text="Inserireire una parola da cercare: " />
+                  <TextField fx:id="textWord" />
+               </children>
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin></HBox>
+            <HBox spacing="80.0">
+               <children>
+                  <Button fx:id="btnCreateGraph" mnemonicParsing="false" onAction="#handleCreateGraph" prefWidth="132.0" text="Genera grafo " />
+                  <Button fx:id="btnFindNeighbours" mnemonicParsing="false" onAction="#handleFindNeighbours" prefWidth="132.0" text="Trova Vicini" />
+                  <Button fx:id="btnFindMaxDegree" mnemonicParsing="false" onAction="#handleFindMaxDegree" prefWidth="132.0" text="Trova grado max" />
+               </children>
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin></HBox>
+            <TextArea fx:id="textArea" />
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="BOTTOM_RIGHT" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#handleReset" text="Reset" />
+         </children>
+         <padding>
+            <Insets right="25.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Lab8_Dizionario" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
 </BorderPane>
